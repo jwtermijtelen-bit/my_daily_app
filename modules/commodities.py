@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "YOUR_ALPHA_VANTAGE_KEY"
+API_KEY = "3YSDZPMF0FVH7NCS"
 
 def get_commodities():
     gold_url = f"https://www.alphavantage.co/query?function=COMMODITY_EXCHANGE_RATE&from_symbol=XAU&to_symbol=USD&apikey={API_KEY}"
