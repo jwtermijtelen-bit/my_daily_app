@@ -1,5 +1,14 @@
+import yfinance as yf
+
 def get_investments():
-    return [
-        {"name": "Portfolio Value", "value": "£120,000"},
-        {"name": "Daily Change", "value": "+£250"}
-    ]
+    portfolio = {
+        "AAPL": yf.Ticker("AAPL").info.get("currentPrice"),
+        "MSFT": yf.Ticker("MSFT").info.get("currentPrice"),
+        "TSLA": yf.Ticker("TSLA").info.get("currentPrice")
+    }
+
+    results = []
+    for name, price in portfolio.items():
+        results.append({"name": name, "value": f"${price}"})
+
+    return results
